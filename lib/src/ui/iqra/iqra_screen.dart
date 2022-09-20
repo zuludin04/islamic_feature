@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islamic_feature/src/utils/toolbar.dart';
 
 import '../../data/model/iqra.dart';
 import '../../utils/constants.dart';
@@ -10,6 +11,7 @@ class IqraScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: Toolbar.defaultToolbar(context, 'Iqra'),
       body: Container(
         padding: const EdgeInsets.all(8),
         child: GridView.count(

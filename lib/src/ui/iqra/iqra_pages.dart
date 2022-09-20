@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../data/model/iqra.dart';
+import '../../utils/toolbar.dart';
 
 class IqraPages extends StatefulWidget {
   final Iqra iqra;
@@ -19,6 +20,7 @@ class _IqraPagesState extends State<IqraPages> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: Toolbar.defaultToolbar(context, widget.iqra.name),
       body: Column(
         children: [
           Expanded(

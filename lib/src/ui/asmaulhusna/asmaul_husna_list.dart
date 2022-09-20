@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islamic_feature/src/utils/toolbar.dart';
 
 import '../../data/islamic_feature_data.dart';
 import '../../data/model/asmaul_husna.dart';
@@ -15,32 +16,35 @@ class AsmaulHusnaList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: FutureBuilder<List<AsmaulHusna>>(
-        future: loadAsmaulHusnaData(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const CircularProgressIndicator();
-          } else if (snapshot.connectionState == ConnectionState.done) {
-            if (snapshot.hasError) {
-              return const Text('Error');
-            } else if (snapshot.hasData) {
-              return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 4),
-                child: GridView.count(
-                  crossAxisCount: 3,
-                  childAspectRatio: .8,
-                  children:
-                      snapshot.data!.map((e) => _asmaulHusnaItem(e)).toList(),
-                ),
-              );
+    return Scaffold(
+      appBar: Toolbar.defaultToolbar(context, 'Asmaul Husna'),
+      body: Center(
+        child: FutureBuilder<List<AsmaulHusna>>(
+          future: loadAsmaulHusnaData(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const CircularProgressIndicator();
+            } else if (snapshot.connectionState == ConnectionState.done) {
+              if (snapshot.hasError) {
+                return const Text('Error');
+              } else if (snapshot.hasData) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 4),
+                  child: GridView.count(
+                    crossAxisCount: 3,
+                    childAspectRatio: .8,
+                    children:
+                        snapshot.data!.map((e) => _asmaulHusnaItem(e)).toList(),
+                  ),
+                );
+              } else {
+                return const Text('Empty data');
+              }
             } else {
-              return const Text('Empty data');
+              return Text('State: ${snapshot.connectionState}');
             }
-          } else {
-            return Text('State: ${snapshot.connectionState}');
-          }
-        },
+          },
+        ),
       ),
     );
   }
