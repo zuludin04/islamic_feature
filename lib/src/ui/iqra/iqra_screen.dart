@@ -51,7 +51,7 @@ class IqraScreen extends StatelessWidget {
               bottom: 0,
               right: 10,
               child: Image.asset(
-                'packages/asmaul_husna/assets/book.png',
+                'packages/islamic_feature/assets/book.png',
                 width: 80,
                 height: 80,
               ),

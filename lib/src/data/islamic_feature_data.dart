@@ -6,7 +6,7 @@ import 'model/dzikir.dart';
 
 Future<List<AsmaulHusna>> loadAsmaulHusnaData() async {
   String jsonString =
-      await loadFromAssets('packages/asmaul_husna/assets/asmaul_husna.json');
+      await loadFromAssets('packages/islamic_feature/assets/asmaul_husna.json');
   List asmaulHusna = json.decode(jsonString);
 
   var asmaulHusnaList = <AsmaulHusna>[];
@@ -21,7 +21,7 @@ Future<List<AsmaulHusna>> loadAsmaulHusnaData() async {
 
 Future<List<Dzikir>> loadDzikirData(bool morning) async {
   String jsonString =
-      await loadFromAssets('packages/asmaul_husna/assets/dzikir.json');
+      await loadFromAssets('packages/islamic_feature/assets/dzikir.json');
   List dzikir = json.decode(jsonString);
 
   var dzikirList = <Dzikir>[];

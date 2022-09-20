@@ -17,8 +17,7 @@ dev_dependencies:
   flutter_lints: ^2.0.0
 
 flutter:
-
-assets:
-  - packages/asmaul_husna/assets/asmaul_husna.json
-  - packages/asmaul_husna/assets/dzikir.json
-  - packages/asmaul_husna/assets/book.png
+  assets:
+    - packages/islamic_feature/assets/asmaul_husna.json
+    - packages/islamic_feature/assets/dzikir.json
+    - packages/islamic_feature/assets/book.png

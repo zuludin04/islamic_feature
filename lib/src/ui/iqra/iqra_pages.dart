@@ -68,7 +68,9 @@ class _IqraPagesState extends State<IqraPages> {
     return PageView.builder(
       controller: _pageController
         ..addListener(() {
-          iqraPage = _pageController.page!.toInt();
+          setState(() {
+            iqraPage = _pageController.page!.toInt();
+          });
         }),
       itemBuilder: (context, index) {
         return Image.network(
