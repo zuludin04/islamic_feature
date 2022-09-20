@@ -1,7 +1,5 @@
 library islamic_feature;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'src/ui/asmaulhusna/asmaul_husna_list.dart';
+export 'src/ui/dzikir/dzikir_list.dart';
+export 'src/ui/iqra/iqra_screen.dart';
